@@ -12,8 +12,8 @@ export function activate(context: vscode.ExtensionContext) {
 		},
 	});
 
-	vscode.commands.registerCommand('webview-context-test.test-command-1', () => vscode.window.showInformationMessage('Test 1'));
-	vscode.commands.registerCommand('webview-context-test.test-command-2', () => vscode.window.showInformationMessage('Test 2'));
+	vscode.commands.registerCommand('webview-context-test.test-command-1', (context: any) => vscode.window.showInformationMessage(`Test 1 (context: ${JSON.stringify(context)}})`));
+	vscode.commands.registerCommand('webview-context-test.test-command-2', (context: any) => vscode.window.showInformationMessage(`Test 2 (context: ${JSON.stringify(context)}})`));
 }
 
 // This method is called when your extension is deactivated
